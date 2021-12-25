@@ -4,6 +4,7 @@ import uuid
 
 class Test(models.Model):
     id = uuid.uuid4()
+    name = models.CharField(max_length=512, default=str(id))
 
 
 class Choises(models.Model):
