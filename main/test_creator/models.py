@@ -9,9 +9,14 @@ class Test(models.Model):
     date_creation = models.DateTimeField(default=timezone.now)
     date_last_change = models.DateTimeField(default=timezone.now)
 
+    def __str__(self):
+        return self.name
 
 class Choises(models.Model):
     text = models.CharField(max_length=512)
     photo = models.TextField(blank=True, null=True)
     youtube_url = models.CharField(max_length=512, default=None, blank=True, null=True)
     test = models.ForeignKey(Test, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.text
